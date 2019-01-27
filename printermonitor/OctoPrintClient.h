@@ -27,7 +27,6 @@ SOFTWARE.
 #pragma once
 #include <ESP8266WiFi.h>
 #include <ArduinoJson.h>
-#include <base64.h>
 
 class OctoPrintClient {
 
@@ -70,10 +69,10 @@ private:
 
   
 public:
-  OctoPrintClient(String ApiKey, String server, int port, String user, String pass, boolean psu);
+  OctoPrintClient(String ApiKey, String server, int port, boolean psu);
   void getPrinterJobResults();
   void getPrinterPsuState();
-  void updateOctoPrintClient(String ApiKey, String server, int port, String user, String pass, boolean psu);
+  void updateOctoPrintClient(String ApiKey, String server, int port, boolean psu);
 
   String getAveragePrintTime();
   String getEstimatedPrintTime();
